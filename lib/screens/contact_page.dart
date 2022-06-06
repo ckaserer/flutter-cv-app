@@ -6,32 +6,13 @@ import 'package:homepage/widgets/card.dart';
 class ContactPage extends StatelessWidget {
   final double width;
 
-  const ContactPage({Key? key, required this.width}) : super(key: key);
+  const ContactPage({
+    Key? key,
+    required this.width,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> contactDetailCards = <Widget>[];
-
-    if (!kIsWeb) {
-      contactDetailCards.add(
-        MyCard(
-          leading: Icon(ContactDetails.phone.icon),
-          title: ContactDetails.phone.label,
-          onTap: ContactDetails.phone.getUrlFunction(),
-        ),
-      );
-    }
-    contactDetailCards.add(
-      MyCard(
-        leading: Icon(ContactDetails.mail.icon),
-        title: ContactDetails.mail.label,
-        onTap: ContactDetails.mail.getUrlFunction(),
-      ),
-    );
-    Column contactDetailsColumn = Column(
-      children: contactDetailCards,
-    );
-
     return SafeArea(
       child: Center(
         child: SingleChildScrollView(
@@ -55,39 +36,45 @@ class ContactPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 299,
-                    child: Column(
-                      children: [
-                        const Text(
-                          ContactDetails.name,
-                          style: TextStyle(
-                            fontFamily: 'Pacifico',
-                            fontSize: 40,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+                  Column(
+                    children: [
+                      const Text(
+                        ContactDetails.name,
+                        style: TextStyle(
+                          fontFamily: 'Pacifico',
+                          fontSize: 40,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
-                        const Text(
-                          ContactDetails.jobTitle,
-                          style: TextStyle(
-                            fontFamily: 'Source Sans Pro',
-                            fontSize: 20,
-                            color: Colors.white,
-                            letterSpacing: 2.5,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      ),
+                      const Text(
+                        ContactDetails.jobTitle,
+                        style: TextStyle(
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20,
+                          color: Colors.white,
+                          letterSpacing: 2.5,
+                          fontWeight: FontWeight.bold,
                         ),
-                        const SizedBox(
-                          height: 20,
-                          width: 150,
-                          child: Divider(
-                            color: Colors.white,
-                          ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                        width: 150,
+                        child: Divider(
+                          color: Colors.white,
                         ),
-                        contactDetailsColumn,
-                      ],
-                    ),
+                      ),
+                      MyCard(
+                        leading: Icon(ContactDetails.phone.icon),
+                        title: ContactDetails.phone.label,
+                        onTap: ContactDetails.phone.getUrlFunction(),
+                      ),
+                      MyCard(
+                        leading: Icon(ContactDetails.mail.icon),
+                        title: ContactDetails.mail.label,
+                        onTap: ContactDetails.mail.getUrlFunction(),
+                      ),
+                    ],
                   ),
                 ],
               ),
