@@ -1,5 +1,5 @@
+import 'package:ckaserer/models/icon_button_model.dart';
 import 'package:flutter/material.dart';
-import 'package:homepage/models/icon_button_model.dart';
 
 class ContactDetails {
   static const String name = 'Clemens Kaserer';

@@ -1,9 +1,9 @@
+import 'package:ckaserer/constants/settings.dart';
+import 'package:ckaserer/constants/theme.dart';
+import 'package:ckaserer/screens/contact_page.dart';
+import 'package:ckaserer/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:homepage/constants/settings.dart';
-import 'package:homepage/constants/theme.dart';
-import 'package:homepage/screens/contact_page.dart';
-import 'package:homepage/widgets/bottom_navigation_bar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,8 +17,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: MyTheme.accentColor,
         body: kIsWeb
-            ? const ContactPage(width: 400)
-            : const ContactPage(width: double.infinity),
+            ? const ContactPage(
+                width: 400,
+                height: 600,
+              )
+            : const ContactPage(
+                width: double.infinity,
+                height: double.infinity,
+              ),
         bottomNavigationBar: MyBottomNavigationBar(),
       ),
     );

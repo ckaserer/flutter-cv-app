@@ -19,12 +19,9 @@ class MyCard extends StatelessWidget {
       child: Card(
         color: Colors.white,
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListTile(
-            leading: leading,
-            title: Text(title),
-          ),
+        child: ListTile(
+          leading: leading,
+          title: Text(title),
         ),
       ),
     );

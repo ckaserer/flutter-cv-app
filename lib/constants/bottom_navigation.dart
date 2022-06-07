@@ -1,5 +1,5 @@
+import 'package:ckaserer/models/icon_button_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:homepage/models/icon_button_model.dart';
 
 class BottomNavigation {
   static const List<MyIconButtonModel> links = [

@@ -1,84 +1,102 @@
-import 'package:flutter/foundation.dart';
+import 'package:ckaserer/constants/contact_details.dart';
+import 'package:ckaserer/widgets/card.dart';
 import 'package:flutter/material.dart';
-import 'package:homepage/constants/contact_details.dart';
-import 'package:homepage/widgets/card.dart';
 
 class ContactPage extends StatelessWidget {
   final double width;
+  final double height;
 
   const ContactPage({
     Key? key,
     required this.width,
+    required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const int kFlex = 10;
     return SafeArea(
       child: Center(
-        child: SingleChildScrollView(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: width,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: width,
+            maxHeight: height,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Flexible(
+                flex: kFlex,
+                child: Container(),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      maxHeight: 220,
-                      maxWidth: 220,
+              Flexible(
+                flex: 64,
+                child: Container(
+                  constraints: BoxConstraints(
+                    minHeight: 250,
+                    maxHeight: 250,
+                  ),
+                  child: ClipOval(
+                    child: Image.asset(
+                      ContactDetails.avatarImagePath,
+                      fit: BoxFit.cover,
                     ),
-                    child: ClipOval(
-                      child: Image.asset(
-                        ContactDetails.avatarImagePath,
-                        fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Flexible(
+                flex: 24,
+                child: Center(
+                  child: FittedBox(
+                    child: Text(
+                      ContactDetails.name,
+                      style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  Column(
-                    children: [
-                      const Text(
-                        ContactDetails.name,
-                        style: TextStyle(
-                          fontFamily: 'Pacifico',
-                          fontSize: 40,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        ContactDetails.jobTitle,
-                        style: TextStyle(
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 20,
-                          color: Colors.white,
-                          letterSpacing: 2.5,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                        width: 150,
-                        child: Divider(
-                          color: Colors.white,
-                        ),
-                      ),
-                      MyCard(
-                        leading: Icon(ContactDetails.phone.icon),
-                        title: ContactDetails.phone.label,
-                        onTap: ContactDetails.phone.getUrlFunction(),
-                      ),
-                      MyCard(
-                        leading: Icon(ContactDetails.mail.icon),
-                        title: ContactDetails.mail.label,
-                        onTap: ContactDetails.mail.getUrlFunction(),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
-            ),
+              Flexible(
+                flex: 8,
+                child: FittedBox(
+                  fit: BoxFit.fitHeight,
+                  child: Text(
+                    ContactDetails.jobTitle,
+                    style: TextStyle(
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20,
+                      color: Colors.white,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 150,
+                child: Divider(
+                  color: Colors.white,
+                ),
+              ),
+              MyCard(
+                leading: Icon(ContactDetails.phone.icon),
+                title: ContactDetails.phone.label,
+                onTap: ContactDetails.phone.getUrlFunction(),
+              ),
+              MyCard(
+                leading: Icon(ContactDetails.mail.icon),
+                title: ContactDetails.mail.label,
+                onTap: ContactDetails.mail.getUrlFunction(),
+              ),
+              Flexible(
+                flex: kFlex,
+                child: Container(),
+              ),
+            ],
           ),
         ),
       ),
