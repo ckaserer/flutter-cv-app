@@ -78,8 +78,10 @@ class ContactPage extends StatelessWidget {
               ),
               const SizedBox(
                 width: 150,
+                height: 20,
                 child: Divider(
                   color: Colors.white,
+                  height: 2,
                 ),
               ),
               MyCard(
