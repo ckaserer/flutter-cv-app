@@ -32,7 +32,7 @@ class ContactPage extends StatelessWidget {
               Flexible(
                 flex: 64,
                 child: Container(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minHeight: 250,
                     maxHeight: 250,
                   ),
@@ -44,7 +44,7 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Flexible(
+              const Flexible(
                 flex: 24,
                 child: Center(
                   child: FittedBox(
@@ -60,7 +60,7 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Flexible(
+              const Flexible(
                 flex: 8,
                 child: FittedBox(
                   fit: BoxFit.fitHeight,
