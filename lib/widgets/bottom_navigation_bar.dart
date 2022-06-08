@@ -1,7 +1,7 @@
+import 'package:ckaserer/constants/bottom_navigation.dart';
 import 'package:ckaserer/constants/theme.dart';
 import 'package:ckaserer/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
-import 'package:ckaserer/constants/bottom_navigation.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
   late final List<Widget> _children;

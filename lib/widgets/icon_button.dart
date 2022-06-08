@@ -49,12 +49,12 @@ class _MyIconButtonState extends State<MyIconButton> {
       onEnter: _onHover,
       onExit: _onExit,
       child: IconButton(
+        iconSize: widget.size,
         onPressed: widget.onPressed,
         tooltip: widget.tooltip,
         icon: FaIcon(
           widget.icon,
           color: setColor(),
-          size: widget.size,
         ),
       ),
     );
