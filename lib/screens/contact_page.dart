@@ -1,5 +1,8 @@
+import 'package:ckaserer/constants/bottom_navigation.dart';
 import 'package:ckaserer/constants/contact_details.dart';
+import 'package:ckaserer/constants/theme.dart';
 import 'package:ckaserer/widgets/card.dart';
+import 'package:ckaserer/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
 
 class ContactPage extends StatelessWidget {
@@ -93,6 +96,41 @@ class ContactPage extends StatelessWidget {
                 leading: Icon(ContactDetails.mail.icon),
                 title: ContactDetails.mail.label,
                 onTap: ContactDetails.mail.getUrlFunction(),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MyIconButton(
+                    key,
+                    icon: BottomNavigation.links[0].icon,
+                    onPressed: BottomNavigation.links[0].getUrlFunction(),
+                    tooltip: BottomNavigation.links[0].label,
+                    size: MyTheme.bottomNavigationBarIconButtonHeight,
+                  ),
+                  const SizedBox(
+                    width: MyTheme.bottomNavigationBarIconButtonSpacing,
+                  ),
+                  MyIconButton(
+                    key,
+                    icon: BottomNavigation.links[1].icon,
+                    onPressed: BottomNavigation.links[1].getUrlFunction(),
+                    tooltip: BottomNavigation.links[1].label,
+                    size: MyTheme.bottomNavigationBarIconButtonHeight,
+                  ),
+                  const SizedBox(
+                    width: MyTheme.bottomNavigationBarIconButtonSpacing,
+                  ),
+                  MyIconButton(
+                    key,
+                    icon: BottomNavigation.links[2].icon,
+                    onPressed: BottomNavigation.links[2].getUrlFunction(),
+                    tooltip: BottomNavigation.links[2].label,
+                    size: MyTheme.bottomNavigationBarIconButtonHeight,
+                  )
+                ],
               ),
               Flexible(
                 flex: kFlex,

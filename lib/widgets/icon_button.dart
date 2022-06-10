@@ -40,7 +40,7 @@ class _MyIconButtonState extends State<MyIconButton> {
     if (_favorite) {
       return MyTheme.accentColor;
     }
-    return MyTheme.secondaryColor;
+    return Colors.black;
   }
 
   @override
@@ -48,13 +48,15 @@ class _MyIconButtonState extends State<MyIconButton> {
     return MouseRegion(
       onEnter: _onHover,
       onExit: _onExit,
-      child: IconButton(
-        iconSize: widget.size,
+      child: FloatingActionButton(
         onPressed: widget.onPressed,
         tooltip: widget.tooltip,
-        icon: FaIcon(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        child: FaIcon(
           widget.icon,
           color: setColor(),
+          size: widget.size,
         ),
       ),
     );
