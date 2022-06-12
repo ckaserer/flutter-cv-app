@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class MyIconButton extends StatefulWidget {
   final IconData icon;
   final VoidCallback onPressed;
-  final String tooltip;
   final double size;
 
   @override
@@ -13,7 +12,6 @@ class MyIconButton extends StatefulWidget {
     Key? key, {
     required this.icon,
     required this.onPressed,
-    required this.tooltip,
     required this.size,
   }) : super(key: key);
 
@@ -50,7 +48,6 @@ class _MyIconButtonState extends State<MyIconButton> {
       onExit: _onExit,
       child: FloatingActionButton(
         onPressed: widget.onPressed,
-        tooltip: widget.tooltip,
         backgroundColor: Colors.white,
         elevation: 0,
         child: FaIcon(
